@@ -1,24 +1,76 @@
-# Fuzzie
-## SaaS Business Automation Builder
+# Book Review Platform
 
-### Features:
-#### FYI- all connection are setup from scratch we did not use an integration library 😉!!!   
-#### We wanted to show you what it takes to create all this stuff.   
-#### 🤯 B2C SaaS   
-#### 🏢 Connect users Google Drive to the app     
-#### 🌐 Watch for changes in google drive   
-#### 🚀 Connect users slack to send notification and custom messages
-#### 💻 Connect users discord to send notification and custom messages
-#### 🔄 Connect users Notion to create entries in a database
-#### 🛒 Stripe to charge month to month subscriptions 
-#### 🔐 Payments based on credits consumed
-#### 💳 Beautiful redesigned node interface
-#### 🚨 Drag and drop node builder
-#### 💰 Create automations flows
-#### 📊 Create a sequence of actions to fire after a trigger event happens
-#### 🗺️ Mini map to see all workflow nodes
-#### ⭐️ Infinite Canvas
-#### ✨ Expandable sidebar with drag feature
-#### ⚡️Aceternity UI
-#### ☀️ Light & Dark mode
-#### 📄 Functioning beautiful landing page
+This project is a Book Review Platform built using **Next.js**, **Wix CMS**, and **ShadCN**. The platform allows users to browse books, submit reviews, and authenticate via Wix OAuth.
+
+## Features
+
+- **Wix Studio Setup**: Configure Wix CMS to manage book-related data.
+- **Next.js Integration**: Utilize Next.js for frontend development.
+- **ShadCN UI**: Implement UI components with ShadCN.
+- **Book Display & Search**: Browse and search for books in the catalog.
+- **Book Review System**: Submit and view book reviews.
+- **OAuth Authentication**: Secure login using Wix OAuth.
+- **Metadata & UI Enhancements**: Optimize SEO metadata and enhance UI with cursive fonts and icons.
+
+## Setup Guide
+
+### Prerequisites
+
+- Node.js installed
+- Wix CMS account
+- MongoDB (if needed for additional storage)
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```sh
+   git clone https://github.com/YogeshDPalve/the-book-review.git
+   cd book-review-platform
+   ```
+
+2. **Install Dependencies**
+
+   ```sh
+   npm install
+   ```
+
+3. **Setup Wix CMS**
+   - Create a new Wix Studio project.
+   - Setup collections for books and reviews.
+4. **Setup Next.js**
+
+   ```sh
+   npx create-next-app@latest .
+   ```
+
+5. **Configure OAuth**
+
+   - Register OAuth credentials in Wix.
+   - Add the client ID and secret to `.env`:
+
+   ```sh
+   WIX_CLIENT_ID=your_client_id
+   WIX_CLIENT_SECRET=your_client_secret
+   ```
+
+6. **Run the Project**
+   ```sh
+   npm run dev
+   ```
+
+## Tech Stack
+
+- **Next.js** - Frontend framework
+- **Wix CMS** - Content management
+- **ShadCN** - UI components
+- **MongoDB** (optional) - Database storage
+- **OAuth** - Authentication
+
+## Contributing
+
+Feel free to contribute by submitting issues and pull requests.
+
+## License
+
+This project is licensed under the MIT License.
