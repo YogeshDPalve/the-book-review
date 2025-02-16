@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { BookIcon } from "lucide-react";
 
 export default async function Home() {
   const books = await client.items
@@ -25,13 +26,13 @@ export default async function Home() {
       <h1 className="text-2xl font-bold">Books</h1>
       <div className="grid grid-cols-3 gap-4">
         {books.map((book: any) => (
-          <Card className="shadow-md" key={book?._id}>
+          <Card className="shadow-md  " key={book?._id}>
             <CardHeader>
               <CardTitle>{book.title}</CardTitle>
               <CardDescription>Card Description</CardDescription>
             </CardHeader>
-            <CardContent>
-              {book.image && (
+            <CardContent className="flex flex-col items-center ">
+              {book.image ? (
                 <Image
                   src={convertWixImageToUrl(book.image)}
                   alt={book?.title}
@@ -39,6 +40,11 @@ export default async function Home() {
                   height={200}
                   className="w-[150px] h-[200px] mb-4 rounded-lg"
                 />
+              ) : (
+                <div className="flex flex-col items-center justify-center w-[150px] h-[200px] mb-4 gap-3 rounded-lg bg-gray-200">
+                  <BookIcon className="w-10 h-10 text-gray-700" />
+                  <p>No Image</p>
+                </div>
               )}
               <p>{book.author}</p>
             </CardContent>

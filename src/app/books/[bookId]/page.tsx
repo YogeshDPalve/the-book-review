@@ -8,7 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { BookIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
+import { PostReviewForm } from "./post-review-form";
 
 export default async function BookPage({
   params,
@@ -30,13 +32,20 @@ export default async function BookPage({
         </CardHeader>
         <CardContent>
           <div className="flex gap-4">
-            <Image
-              src={convertWixImageToUrl(book?.image)}
-              alt={book?.title}
-              width={200}
-              height={300}
-              className="w-[200px] h-[300px] mb-4 rounded-lg"
-            />
+            {book.image ? (
+              <Image
+                src={convertWixImageToUrl(book.image)}
+                alt={book?.title}
+                width={150}
+                height={200}
+                className="w-[150px] h-[200px] mb-4 rounded-lg"
+              />
+            ) : (
+              <div className="flex-shrink-0 flex flex-col items-center justify-center w-[150px] h-[200px] mb-4 gap-3 rounded-lg bg-gray-200">
+                <BookIcon className="w-10 h-10 text-gray-700" />
+                <p>No Image</p>
+              </div>
+            )}
 
             <div>
               <p className="text-lg font-semibold">By {book?.author}</p>
@@ -48,6 +57,32 @@ export default async function BookPage({
           </div>
         </CardContent>
       </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Reviews</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {[1, 2, 3].map((review) => (
+              <div key={review?._id} className="border-b pb-4">
+                <div className="flex justify-between items-center">
+                  <p className="font-semibold">{review?.name}</p>
+                  <div className="flex">
+                    {[...Array(review?.rating)].map((_, i) => (
+                      <StarIcon
+                        key={i}
+                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="mt-2">{review?.review}</p>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+      <PostReviewForm bookId={book?._id} />
     </div>
   );
 }
