@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { client } from "../lib/wix";
+import { client, convertWixImageToUrl } from "../lib/wix";
 import { items } from "@wix/data";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,12 +25,21 @@ export default async function Home() {
       <h1 className="text-2xl font-bold">Books</h1>
       <div className="grid grid-cols-3 gap-4">
         {books.map((book: any) => (
-          <Card key={book?._id}>
+          <Card className="shadow-md" key={book?._id}>
             <CardHeader>
               <CardTitle>{book.title}</CardTitle>
               <CardDescription>Card Description</CardDescription>
             </CardHeader>
             <CardContent>
+              {book.image && (
+                <Image
+                  src={convertWixImageToUrl(book.image)}
+                  alt={book?.title}
+                  width={150}
+                  height={200}
+                  className="w-[150px] h-[200px] mb-4 rounded-lg"
+                />
+              )}
               <p>{book.author}</p>
             </CardContent>
             <CardFooter>
