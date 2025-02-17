@@ -1,7 +1,7 @@
 # Book Review Platform
 
 This project is a Book Review Platform built using **Next.js**, **Wix CMS**, and **ShadCN**. The platform allows users to browse books, submit reviews, and authenticate via Wix OAuth.
-
+ 
 ## Features
 
 - **Wix Studio Setup**: Configure Wix CMS to manage book-related data.
