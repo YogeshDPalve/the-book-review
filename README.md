@@ -65,7 +65,7 @@ This project is a Book Review Platform built using **Next.js**, **Wix CMS**, and
 - **Wix CMS** - Content management
 - **ShadCN** - UI components
 - **MongoDB** (optional) - Database storage
-- **OAuth** - Authentication
+- **OAuth** - Authentication 
 
 ## Contributing
 
