@@ -5,7 +5,7 @@ This project is a Book Review Platform built using **Next.js**, **Wix CMS**, and
 ## Features
 
 - **Wix Studio Setup**: Configure Wix CMS to manage book-related data.
-- **Next.js Integration**: Utilize Next.js for frontend development.
+- **Next.js Integration**: Utilize Next.js for frontend development. 
 - **ShadCN UI**: Implement UI components with ShadCN.
 - **Book Display & Search**: Browse and search for books in the catalog.
 - **Book Review System**: Submit and view book reviews.
