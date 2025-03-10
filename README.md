@@ -51,7 +51,7 @@ This project is a Book Review Platform built using **Next.js**, **Wix CMS**, and
 
    ```sh
    WIX_CLIENT_ID=your_client_id
-   WIX_CLIENT_SECRET=your_client_secret
+   WIX_CLIENT_SECRET=your_client_secret 
    ```
 
 6. **Run the Project**
